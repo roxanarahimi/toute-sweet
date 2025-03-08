@@ -1,0 +1,160 @@
+body, html {
+    max-width: 1535px;
+    margin: 0 auto;
+    /*font-family: IranSans !important;*/
+    direction: rtl !important;
+    text-align: right !important;
+    scroll-behavior: smooth;
+    background-color: transparent;
+}
+
+*:not(nav, .navbar, .nav-item, .navbar-nav, .nav-link) {
+    transition: all 0.3s ease !important;
+    font-family: IranSans !important;
+}
+
+body {
+
+    overflow-x: hidden !important;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    cursor: pointer !important;
+    background-color: gray !important;
+}
+
+
+/* Track */
+::-webkit-scrollbar-track {
+    /*box-shadow: inset 0 0 5px grery;*/
+    /*border-radius: 10px;*/
+    cursor: pointer !important;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: dimgray;
+    border-radius: 5px;
+    cursor: pointer !important;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: darkgray;
+    cursor: pointer !important;
+
+}
+
+@media (max-width: 700px) {
+    ::-webkit-scrollbar {
+        width: 0 !important;
+        background: transparent !important;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: transparent !important;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: transparent !important;
+    }
+}
+
+/*******************************************************************************************/
+.cat-box-wrapper{
+    /*padding: 30px;*/
+}
+.cat-box {
+    width: 140px;
+    height: 140px;
+    border: 1px solid whitesmoke;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    padding: 10px;
+    /*margin: 10px 30px;*/
+    cursor: pointer;
+}
+.cat-box:hover{
+    background-color: transparent;
+}
+.cat-title{
+    text-align: center;
+    white-space: nowrap;
+    margin: 20px 0;
+}
+.product-box-wrapper{
+    margin-bottom: 25px;
+}
+.product-box {
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    padding: 0 20px 38px 20px;
+    cursor: pointer;
+    position: relative;
+}
+.product-box:hover{
+    background-color: transparent;
+}
+.product-box:hover img{
+    transform: scale(1.12);
+    opacity: 0.9;
+}
+.product-title{
+    position: absolute;
+    right: 0;
+    width: 100%;
+    bottom: 0px;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 14px;
+
+}
+.main-bg{
+    background-color: #1A453C;
+}
+.main-bg-light{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+@media (max-width: 600px) {
+    .cat-box {
+        width: 115px;
+        height: 115px;
+    }
+    .cat-title {
+        font-size: 11px;
+    }
+
+    .product-title {
+        font-size: 13px;
+    }
+}
+
+.navbar{
+    background-color: #1A453C !important;
+    color: white !important;
+    font-size: 14px !important;
+}
+/*.navbar:hover{*/
+/*    background-color: white !important;*/
+/*    color: black !important;*/
+/*}*/
+
+.text-justify{
+    text-align: justify !important;
+}
+.cursor{
+    cursor: pointer !important;
+}
+.text-left{
+    text-align: left !important;
+}

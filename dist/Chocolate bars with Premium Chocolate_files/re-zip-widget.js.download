@@ -1,0 +1,23 @@
+window.rezip = window.rezip || {}
+const loadReZipScript = () => {
+  const serverUrl = 'https://haunted-tomb-42961-0523de805b35.herokuapp.com/https://re-zip--development.gadget.app';
+  //const serverUrl = 'https://haunted-tomb-42961-0523de805b35.herokuapp.com/https://re-zip.gadget.app';
+  return fetch(serverUrl + '/rezip.js')
+    .then(response => response.text())
+    .then(scriptContent => {
+      const blob = new Blob([scriptContent], { type: 'application/javascript' });
+      const scriptUrl = URL.createObjectURL(blob);
+      return import(scriptUrl);
+    })
+    .then(module => {
+      window.rezip = module.default;
+
+    })
+    .catch(err => console.error(err));
+}
+
+loadReZipScript().then(() => {
+  if (window.rezip && typeof window.rezip.initialize === 'function') {
+    window.rezip.initialize();
+  }
+});
