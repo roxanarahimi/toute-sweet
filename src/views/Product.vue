@@ -1,39 +1,6 @@
 <template>
   <div id="header" class="">
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid d-flex justify-content-between">
-        <div class="d-none d-lg-block">
-          <a class="navbar-brand" href="#"><img src="/img/logoW.png" width="100px" alt=""></a>
-        </div>
-        <div class="navbar-toggler text-light border-0 cursor"  data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="bi bi-list h1"></i>
-        </div>
-        <div class="d-lg-none">
-          <a class="navbar-brand" href="#"><img src="/img/logoW.png" width="100px" alt=""></a>
-        </div>
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
-          <ul class="navbar-nav text-center">
-            <li class="nav-item px-3">
-              <router-link to="/" class="nav-link active" aria-current="page" href="#">خانه</router-link>
-            </li>
-            <li class="nav-item px-3">
-              <a class="nav-link" href="#">محصولات</a>
-            </li>
-            <li class="nav-item px-3">
-              <a class="nav-link" href="#">درباره ما</a>
-            </li>
-            <li class="nav-item px-3">
-              <a class="nav-link" href="#">تماس با ما</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="d-none d-lg-block">
-          <a class="navbar-brand" href="#"><i class="bi bi-search"></i></a>
-        </div>
-      </div>
-    </nav>
+    <the-nav-bar />
   </div>
 
   <main>
@@ -54,10 +21,7 @@
 
     </div>
 
-<!--    <div class="row" style="background-image: url('/img/nuts.png')">-->
-   <div class="">
-<!--     <img src="/img/nuts.png" width="100%" alt="">-->
-<!--     <div class="d-grid h-100 w-100 " style="position: absolute; top:0; right:0">-->
+   <div class="container-fluid">
      <div class="d-grid h-100 w-100 " >
        <div class="align-self-center w-100">
          <div class="row ">
@@ -88,7 +52,7 @@
                </tbody>
              </table>
            </div>
-           <div class="col-md-7 d-none d-md-block text-center text-md-start">
+           <div class="col-md-10 col-xl-7 d-none d-md-block text-center text-md-start">
              <div class="w-100 mt-5 px-3 px-md-5 mb-5">
                <strong>جدول ارزش غذایی {{ product.title }} در {{ product.weight }} گرم</strong>
                <table class="table table-responsive border text-center mt-3 w-100">
@@ -124,9 +88,9 @@
 
      </div>
 
-     <div class="w-100  text-center text-md-start px-3 px-md-5">
-       <strong>محصولات مشابه</strong>
-       <div id="same-products" class="w-100 p-0 m-0 row mt-3">
+     <div class="w-100  text-center  px-3 px-md-5  text-md-end">
+       <strong class="px-3">محصولات مشابه</strong>
+       <div id="same-products" class="w-100 p-0 m-0 row mt-3 justify-content-md-end">
          <a :href="'/product/'+pro.id" :key="pro.id" v-for="pro in sameProducts" class="product-box-wrapper col-6 col-md-3 col-lg-2">
            <div class="product-box">
              <img :src="pro.image" width="100%" alt="">
@@ -137,132 +101,21 @@
      </div>
    </div>
   </main>
-  <footer class="main-bg text-light w-100 container-fluid">
-    <div class="px-lg-5 ftr" style="padding-top: 100px">
-      <div class="row px-5 justify-content-xl-between">
-        <div class="col-lg-5 col-xl-5 row mb-4">
-          <div class="col-12 px-lg-3 ftr-i" style="">
-            <p class="text-center mb-4"><b>تماس با ما</b></p>
-
-            <ul class="p-0">
-              <li class="d-flex mb-3">
-            <span class="me-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt"
-                   viewBox="0 0 16 16">
-                <path
-                    d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
-                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-              </svg>
-            </span>
-                <small>
-                  <a target="_blank"
-                     href="https://www.google.com/maps/place/AmadehLaziz/@35.7302329,51.3807302,19z/data=!4m6!3m5!1s0x3f8e07d020c7ca45:0x43bf4c9a730015f3!8m2!3d35.7301399!4d51.3807224!16s%2Fg%2F11c1r04p2q">
-                    دفتر مرکزی: تهران، خیابان گیشا، خیابان هشتم، پلاک 58</a>
-                </small>
-              </li>
-              <li class="d-flex mb-3">
-            <span class="me-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone"
-                   viewBox="0 0 16 16">
-                <path
-                    d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
-              </svg>
-           </span>
-
-                <small dir="ltr">
-                  <a href="tel:+982636670558">+98 26 36670558</a>
-
-                </small>
-              </li>
-              <li class="d-flex mb-3">
-            <span class="me-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone"
-                   viewBox="0 0 16 16">
-                <path
-                    d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
-              </svg>
-           </span>
-
-                <small dir="ltr">
-                  <a href="tel:+982141638000">+98 21 41638000</a>
-
-                </small>
-              </li>
-              <li class="d-flex mb-3">
-            <span class="me-2">
-             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope"
-                  viewBox="0 0 16 16">
-  <path
-      d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
-</svg>
-           </span>
-
-                <small dir="ltr">
-                  <a href="mailto:info@copacafe.co">info@copacafe.co</a>
-
-                </small>
-              </li>
-              <li class="d-flex mb-3">
-            <span class="me-2">
-             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-postcard"
-                  viewBox="0 0 16 16">
-  <path fill-rule="evenodd"
-        d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2ZM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4Zm7.5.5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7ZM2 5.5a.5.5 0 0 1 .5-.5H6a.5.5 0 0 1 0 1H2.5a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5H6a.5.5 0 0 1 0 1H2.5a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5H6a.5.5 0 0 1 0 1H2.5a.5.5 0 0 1-.5-.5ZM10.5 5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3ZM13 8h-2V6h2v2Z"/>
-</svg>
-           </span>
-
-                <small dir="ltr" style="cursor: pointer;position: relative" @click="coppyCode">
-                  کد پستی:
-
-                  <span id="postalcode">
-                      1446863914
-                    </span>
-                  <!--                  <span id="coppyAlert">-->
-                  <!--                      کپی شد!-->
-                  <!--                    </span>-->
-                </small>
-              </li>
-
-
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-7 col-xl-6 px-3 d-grid">
-          <div class=" justify-content-between align-self-end d-none d-md-flex">
-            <div><img src="/img/c1.png" class="footer-img" alt=""></div>
-            <div><img src="/img/c2.png" class="footer-img" alt=""></div>
-            <div><img src="/img/c4.png" class="footer-img" alt=""></div>
-            <div><img src="/img/c3.png" class="footer-img" alt=""></div>
-          </div>
-          <div class="d-md-none d-flex">
-            <div class="p-2"><img src="/img/c1.png" class="footer-img " alt=""></div>
-            <div class="p-2"><img src="/img/c3.png" class="footer-img " alt=""></div>
-          </div>
-          <div class="d-md-none d-flex">
-            <div class="p-2"><img src="/img/c2.png" class="footer-img " alt=""></div>
-            <div class="p-2"><img src="/img/c4.png" class="footer-img " alt=""></div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <small class="d-block m-3 mx-5">
-            &copy; کلیه حقوق این وبسایت متعلق به شرکت
-            <br class="d-sm-none">
-            آماده لذیذ میباشد.
-          </small>
-        </div>
-      </div>
-    </div>
-  </footer>
+<the-footer />
 </template>
 
 <script>
 import {onMounted, ref} from "vue";
 import {useRoute} from "vue-router/dist/vue-router";
+import TheNavBar from '@/components/TheNavBar.vue'
+import TheFooter from '@/components/TheFooter.vue'
+
 
 export default {
   name: "Product",
+  components: {
+    TheNavBar,TheFooter,
+  },
   setup() {
 
     const route = useRoute();
@@ -270,7 +123,7 @@ export default {
     const pros = [
       {
         id: 1, cat_id: 1, image: '/img/گرانولابار دانه و کشمش.png',
-        title: 'گرانولابار دانه و کشمش',
+        title: 'انرژی‌بار دانه و کشمش',
         subTitle: 'با کشمش و مغز دانه‌های خوراکی',
         sugar: 'بدون شکر افزوده، فقط با عسل طبیعی',
         contains: 'حاوی 10% پروتئین',
@@ -282,7 +135,7 @@ export default {
       },
       {
         id: 2, cat_id: 1, image: '/img/گرانولابار دانه-چیا.png',
-        title: 'گرانولابار دانه چیا',
+        title: 'انرژی‌بار دانه چیا',
         subTitle: 'با دانه چیا و مغز دانه‌های خوراکی',
         sugar: 'بدون شکر افزوده، فقط با عسل طبیعی',
         contains: 'حاوی 10% پروتئین',
@@ -294,7 +147,7 @@ export default {
       },
       {
         id: 3, cat_id: 1, image: '/img/گرانولابار-بادام-زمینی.png',
-        title: 'گرانولابار بادام زمینی',
+        title: 'انرژی‌بار بادام زمینی',
         subTitle: 'با کره بادام زمینی و مغز دانه‌های خوراکی',
         sugar: 'بدون شکر افزوده، فقط با عسل طبیعی',
         contains: 'حاوی 12% پروتئین',
@@ -306,7 +159,7 @@ export default {
       },
       {
         id: 4, cat_id: 1, image: '/img/گرانولابار-نارگیل.png',
-        title: 'گرانولابار نارگیل',
+        title: 'انرژی‌بار نارگیل',
         subTitle: 'با نارگیل و مغز دانه‌های خوراکی',
         sugar: 'بدون شکر افزوده، فقط با عسل طبیعی',
         contains: 'حاوی 10% پروتئین',
@@ -318,7 +171,7 @@ export default {
       },
       {
         id: 5, cat_id: 1, image: '/img/گرانولابار-کرنبری.png',
-        title: 'گرانولابار کرنبری',
+        title: 'انرژی‌بار کرنبری',
         subTitle: 'با کرنبری و مغز دانه‌های خوراکی',
         sugar: 'بدون شکر افزوده، فقط با عسل طبیعی',
         contains: 'حاوی 9% پروتئین',
