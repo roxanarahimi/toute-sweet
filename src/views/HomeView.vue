@@ -18,8 +18,8 @@
     </div>
 
     <div id="products" class="w-100 p-0 m-0 px-0 px-md-5 row">
-      <router-link :to="'/product/'+pro.id" v-for="pro in products" class="product-box-wrapper" :class="{'col-12 col-lg-4':catFilter, 'col-6 col-lg-2':!catFilter}">
-        <div class="product-box">
+      <router-link :to="'/product/'+pro.id" v-for="pro in products" class="product-box-wrapper h-100" :class="{'col-12 col-lg-4':catFilter, 'col-6 col-lg-2':!catFilter}">
+        <div class="product-box h-100">
           <img :src="pro.image" width="100%" alt="">
           <p class="product-title">{{ pro.title }}</p>
         </div>
@@ -72,10 +72,20 @@ export default {
     })
     const filterProducts = (id) => {
       catFilter.value = true;
-      products.value = [];
-      products.value = pros.filter((element) => {
-        return element.cat_id === id;
+      document.querySelectorAll('.product-box').forEach((element)=>{
+        element.classList.add('zoomOut');
       })
+
+          setTimeout(()=>{
+            products.value = [];
+            products.value = pros.filter((element) => {
+              return element.cat_id === id;
+            })
+            document.querySelectorAll('.product-box').forEach((element)=>{
+              element.classList.remove('zoomOut');
+              element.classList.add('zoomIn');
+            })
+          },600)
     }
     return {
       products, categories, pros, filterProducts, catFilter
