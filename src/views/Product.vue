@@ -2,12 +2,11 @@
   <div id="header" class="">
     <the-nav-bar />
   </div>
-
   <main>
     <div class="w-100 main-bg row m-0 p-0 justify-content-center py-5">
       <div class="col-10 row m-0 p-0 justify-content-center justify-content-md-start">
         <div class="col-10 mb-5 mb-md-0 col-md-4 main-bg-light rounded">
-          <img :src="product.image" class="w-100" alt="">
+          <lazy-image :data="product" />
         </div>
         <div class="col-md-8 text-light text-start d-grid">
           <div class="align-self-end text-center text-md-start ps-md-5">
@@ -93,7 +92,7 @@
        <div id="same-products" class="w-100 p-0 m-0 row mt-3 justify-content-md-end">
          <a :href="'/product/'+pro.id" :key="pro.id" v-for="pro in sameProducts" class="product-box-wrapper col-6 col-md-3 col-lg-2">
            <div class="product-box">
-             <img :src="pro.image" width="100%" alt="">
+             <lazy-image :data="pro"/>
              <p class="product-title">{{ pro.title }}</p>
            </div>
          </a>
@@ -109,12 +108,13 @@ import {onMounted, ref} from "vue";
 import {useRoute} from "vue-router/dist/vue-router";
 import TheNavBar from '@/components/TheNavBar.vue'
 import TheFooter from '@/components/TheFooter.vue'
+import LazyImage from '@/components/LazyImage.vue'
 
 
 export default {
   name: "Product",
   components: {
-    TheNavBar,TheFooter,
+    TheNavBar,TheFooter,LazyImage
   },
   setup() {
 

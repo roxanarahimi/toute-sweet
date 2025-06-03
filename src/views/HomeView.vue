@@ -11,16 +11,16 @@
     <div id="categories" class="w-100 d-flex justify-content-between justify-content-md-center py-5 mb-5">
       <div v-for="cat in categories" class="cat-box-wrapper mx-md-3">
         <div class="cat-box" @click="filterProducts(cat.id)">
-          <img :src="cat.image" width="100%" alt="">
+          <lazy-image :data="cat"/>
           <p class="cat-title">{{ cat.title }}</p>
         </div>
       </div>
     </div>
 
     <div id="products" class="w-100 p-0 m-0 px-0 px-md-5 row">
-      <router-link :to="'/product/'+pro.id" v-for="pro in products" class="product-box-wrapper h-100" :class="{'col-12 col-lg-4':catFilter, 'col-6 col-lg-2':!catFilter}">
+      <router-link :to="'/product/'+pro.id" v-for="pro in products" :key="pro.id" class="product-box-wrapper h-100" :class="{'col-12 col-lg-4':catFilter, 'col-6 col-lg-2':!catFilter}">
         <div class="product-box h-100">
-          <img :src="pro.image" width="100%" alt="">
+          <lazy-image :data="pro" :index="pro.id" />
           <p class="product-title">{{ pro.title }}</p>
         </div>
       </router-link>
@@ -33,13 +33,13 @@
 // @ is an alias to /src
 import TheNavBar from '@/components/TheNavBar.vue'
 import TheFooter from '@/components/TheFooter.vue'
-
-import {onMounted, ref} from "vue";
+import LazyImage from '@/components/LazyImage.vue'
+import {onBeforeMount, onMounted, ref} from "vue";
 
 export default {
   name: 'HomeView',
   components: {
-    TheNavBar,TheFooter,
+    TheNavBar,TheFooter,LazyImage
   },
   setup() {
     const categories = [
@@ -62,14 +62,14 @@ export default {
       {id:12,cat_id: 3, image: '/img/پروتیین-بار-موزی.png', title: 'پروتئین بار موزی', text: ''},
       {id:13,cat_id: 3, image: '/img/پروتیین-بار-پرتغال.png', title: 'پروتئین بار پرتغال', text: ''},
       {id:14,cat_id: 3, image: '/img/پروتیین-بار-کارامل.png', title: 'پروتئین بار کارامل', text: ''},
-
     ];
     const products = ref([]);
     const catFilter = ref(false);
     onMounted(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
       products.value = pros;
-    })
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      preload();
+    });
     const filterProducts = (id) => {
       catFilter.value = true;
       document.querySelectorAll('.product-box').forEach((element)=>{
@@ -87,8 +87,15 @@ export default {
             })
           },600)
     }
+    const preload = () => {
+        pros.forEach(p => {
+          const img = new Image();
+          img.src = p.image;
+        });
+    }
+
     return {
-      products, categories, pros, filterProducts, catFilter
+      products, categories, pros, filterProducts, catFilter, preload,scroll
     }
   }
 }

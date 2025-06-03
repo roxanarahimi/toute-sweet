@@ -18,7 +18,8 @@ body {
     overflow-x: hidden !important;
     margin: 0 auto;
 }
-a{
+
+a {
     text-decoration: none !important;
     color: inherit !important;
 }
@@ -70,9 +71,10 @@ a{
 }
 
 /*******************************************************************************************/
-.cat-box-wrapper{
+.cat-box-wrapper {
     /*padding: 30px;*/
 }
+
 .cat-box {
     width: 140px;
     height: 140px;
@@ -83,17 +85,21 @@ a{
     /*margin: 10px 30px;*/
     cursor: pointer;
 }
-.cat-box:hover{
+
+.cat-box:hover {
     background-color: transparent;
 }
-.cat-title{
+
+.cat-title {
     text-align: center;
     white-space: nowrap;
     margin: 20px 0;
 }
-.product-box-wrapper{
+
+.product-box-wrapper {
     margin-bottom: 25px;
 }
+
 .product-box {
     border: 1px solid whitesmoke;
     border-radius: 5px;
@@ -104,20 +110,24 @@ a{
     transition: 0.4s ease !important;
 }
 
-.zoomOut{
-    transform: scale(0,0);
+.zoomOut {
+    transform: scale(0, 0);
 }
-.zoomiN{
-    transform: scale(1,1);
+
+.zoomiN {
+    transform: scale(1, 1);
 }
-.product-box:hover{
+
+.product-box:hover {
     background-color: transparent;
 }
-.product-box:hover img{
+
+.product-box:hover img {
     transform: scale(1.12);
     opacity: 0.9;
 }
-.product-title{
+
+.product-title {
     position: absolute;
     right: 0;
     width: 100%;
@@ -127,17 +137,21 @@ a{
     font-size: 14px;
 
 }
-.main-bg{
+
+.main-bg {
     background-color: #1A453C;
 }
-.main-bg-light{
+
+.main-bg-light {
     background-color: rgba(255, 255, 255, 0.2);
 }
+
 @media (max-width: 600px) {
     .cat-box {
         width: 115px;
         height: 115px;
     }
+
     .cat-title {
         font-size: 11px;
     }
@@ -147,22 +161,32 @@ a{
     }
 }
 
-.navbar{
+.navbar {
     background-color: #1A453C !important;
     color: white !important;
     font-size: 14px !important;
 }
+
 /*.navbar:hover{*/
 /*    background-color: white !important;*/
 /*    color: black !important;*/
 /*}*/
 
-.text-justify{
+.text-justify {
     text-align: justify !important;
 }
-.cursor{
+
+.cursor {
     cursor: pointer !important;
 }
-.text-left{
+
+.text-left {
     text-align: left !important;
+}
+
+@media (min-width: 992px) {
+    .nvStyle {
+        width: calc(100% - 100px);
+        padding-left: 100px;
+    }
 }

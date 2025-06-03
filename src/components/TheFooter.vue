@@ -1,16 +1,16 @@
 <template>
-  <footer class="main-bg text-light w-100 container-fluid">
+  <footer id="footer" class="main-bg text-light w-100 container-fluid">
     <div class="row px-2 px-xl-5 justify-content-xl-between h-100">
-      <div class="col-md-6 col-xl-3 mb-3 mb-xl-0 h-100 text-center">
-        <img src="/img/logoW.png" class=" mt-3" width="200px" alt="">
+      <div class="col-md-6 col-xl-3 mb-xl-0 h-100 text-center ">
+        <img src="/img/logoW.png" class="mb-4 mb-xl-0 mt-3" width="200px" alt="">
         <p class="text-justify px-xl-3">
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون
           بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای.
         </p>
       </div>
-      <div class="col-md-6 col-xl-3 px-xl-3 mb-3 d-grid">
+      <div class="col-md-6 col-xl-3 px-xl-3 mb-5 mb-xl-3 d-grid ">
         <div class="align-self-end">
-          <p class="text-center mb-4"><b>تماس با ما</b></p>
+          <p class="text-center mt-5 mt-xl-0 mb-4"><b>تماس با ما</b></p>
           <ul class="p-0">
             <li class="d-flex mb-3">
                 <span class="me-2">
@@ -60,7 +60,7 @@
         </div>
 
       </div>
-      <div class="col-12 px-2 px-xl-3 mt-xl-3 mb-3">
+      <div class="col-12 px-2 px-xl-3 mt-xl-3 mb-3 ">
         <small>
           &copy; کلیه حقوق این وبسایت متعلق به شرکت
           <span style=" white-space: nowrap;">تژبهدان سریرا</span>

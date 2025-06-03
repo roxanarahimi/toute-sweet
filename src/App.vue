@@ -2,12 +2,16 @@
   <router-view/>
 </template>
 
-<!--<script>-->
-<!--export default {-->
-<!--  updated() {-->
-<!--    window.scrollTo({ top: 0, behavior: 'smooth' });-->
+<script>
+import {ref} from "vue";
 
-<!--  }-->
+export default {
+  setup() {
+    return {
 
-<!--}-->
-<!--</script>-->
+    }
+  }
+
+
+}
+</script>
