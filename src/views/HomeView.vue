@@ -34,7 +34,7 @@
 import TheNavBar from '@/components/TheNavBar.vue'
 import TheFooter from '@/components/TheFooter.vue'
 import LazyImage from '@/components/LazyImage.vue'
-import {onBeforeMount, onMounted, ref} from "vue";
+import {onMounted, ref} from "vue";
 
 export default {
   name: 'HomeView',
@@ -68,7 +68,7 @@ export default {
     onMounted(() => {
       products.value = pros;
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      preload();
+      // preload();
     });
     const filterProducts = (id) => {
       catFilter.value = true;
