@@ -1,14 +1,17 @@
 <template>
   <footer id="footer" class="main-bg text-light w-100 container-fluid">
     <div class="row px-2 px-xl-5 justify-content-xl-between h-100">
-      <div class="col-md-6 col-xl-3 mb-xl-0 h-100 text-center ">
+      <div class="col-md-6 col-xl-5 mb-xl-0 h-100 text-center ">
         <img src="/img/logoW.png" class="mb-4 mb-xl-0 mt-3" width="200px" alt="">
         <p class="text-justify px-xl-3">
-          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون
-          بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای.
-        </p>
+
+          شرکت «تژ به‌دان سریرا» با برند تجاری TouteSweet از سال ۱۳۹۷ در زمینه تولید انواع موسلی، پروتئین‌بار و
+          انرژی‌بار فعالیت خود را آغاز کرده است. هدف اصلی ما ارائه مواد غذایی سالم و مغذی است که مناسب برای تمام
+          گروه‌های سنی بوده و تجربه‌ای لذت‌بخش از تغذیه سالم را به مشتریان ارائه دهد. در تژ به‌دان سریرا، ما به تغذیه
+          سالم به‌عنوان یکی از ارکان اصلی زندگی توجه ویژه‌ای داریم و تمامی تلاش خود را در جهت ارتقای سلامت و بهبود کیفیت
+          زندگی افراد متمرکز کرده‌ایم.</p>
       </div>
-      <div class="col-md-6 col-xl-3 px-xl-3 mb-5 mb-xl-3 d-grid ">
+      <div class="col-md-6 col-xl-4 px-xl-3 mb-5 mb-xl-3 d-grid ">
         <div class="align-self-end">
           <p class="text-center mt-5 mt-xl-0 mb-4"><b>تماس با ما</b></p>
           <ul class="p-0">
@@ -18,7 +21,8 @@
                 </span>
               <small>
                 <p class="text-justify">
-                  نشانی کارخانه: استان البرز، جاده ملارد، بلوار نیروگاه، ناحیه صنعتی نور، خیابان نور، کوچه نور سوم غربی، پلاک 18
+                  نشانی کارخانه: استان البرز، جاده ملارد، بلوار نیروگاه، ناحیه صنعتی نور، خیابان نور، کوچه نور سوم غربی،
+                  پلاک 18
                 </p>
               </small>
             </li>
@@ -27,7 +31,7 @@
                   <img src="/img/bi-telephone.svg" alt="">
                 </span>
               <small dir="ltr">
-                <a href="tel:+982636660925" dir="rtl">تلفن: <span  dir="ltr">026 36660925</span></a>
+                <a href="tel:+982636660925" dir="rtl">تلفن: <span dir="ltr">026 36660925</span></a>
 
               </small>
             </li>
@@ -63,7 +67,7 @@
       <div class="col-12 px-2 px-xl-3 mt-xl-3 mb-3 ">
         <small>
           &copy; کلیه حقوق این وبسایت متعلق به شرکت
-          <span style=" white-space: nowrap;">تژبهدان سریرا</span>
+          <span style=" white-space: nowrap;">تژ به‌دان سریرا</span>
           میباشد.
         </small>
       </div>

@@ -2,7 +2,7 @@
   <div id="header" class="">
     <the-nav-bar />
     <div class="w-100">
-      <img src="img/banner.jpg" width="100%" alt="">
+      <img src="/img/banner.jpg" width="100%" alt="">
     </div>
   </div>
 
@@ -18,7 +18,7 @@
     </div>
 
     <div id="products" class="w-100 p-0 m-0 px-0 px-md-5 row">
-      <router-link :to="'/product/'+pro.id" v-for="pro in products" :key="pro.id" class="product-box-wrapper h-100" :class="{'col-12 col-lg-4':catFilter, 'col-6 col-lg-2':!catFilter}">
+      <router-link :to="'/product/'+pro.id" v-for="(pro,index) in products" :key="pro.id" class="product-box-wrapper h-100" :class="{'col-12 col-lg-4':catFilter, 'col-6 col-lg-2':!catFilter,'offset-lg-2':!catFilter && index===13}">
         <div class="product-box h-100">
           <lazy-image :data="pro" :index="pro.id" />
           <p class="product-title">{{ pro.title }}</p>
@@ -43,31 +43,38 @@ export default {
   },
   setup() {
     const categories = [
-      {id: 1, image: '/img/گرانولابار-نارگیل.png', title: 'انرژی بار'},
-      {id: 2, image: '/img/موسلی-نارگیل-و-شکلات-تلخ.png', title: 'موسلی'},
-      {id: 3, image: '/img/پروتیین-بار-فندق.png', title: 'پروتئین بار سوفیت'},
+      {id: 1, image: '/img/گرانولابار-نارگیل.png', title: 'انرژی‌بارها'},
+      {id: 2, image: '/img/موسلی-نارگیل-و-شکلات-تلخ.png', title: 'موسلی‌ها'},
+      {id: 3, image: '/img/پروتیین-بار-فندق.png', title: 'پروتئین‌بارها'},
     ];
     const pros = [
       {id:1,cat_id: 1, image: '/img/گرانولابار دانه و کشمش.png', title: 'انرژی‌بار دانه و کشمش', text: ''},
       {id:2,cat_id: 1, image: '/img/گرانولابار دانه-چیا.png', title: 'انرژی‌بار دانه چیا', text: ''},
-      {id:3,cat_id: 1, image: '/img/گرانولابار-بادام-زمینی.png', title: 'انرژی‌بار بادام زمینی', text: ''},
-      {id:4,cat_id: 1, image: '/img/گرانولابار-نارگیل.png', title: 'انرژی‌بار نارگیل', text: ''},
-      {id:5,cat_id: 1, image: '/img/گرانولابار-کرنبری.png', title: 'انرژی‌بار کرنبری', text: ''},
       {id:6,cat_id: 2, image: '/img/موسلی-زردالو.png', title: 'موسلی زردالو', text: ''},
       {id:7,cat_id: 2, image: '/img/موسلی-سیب-و-دارچین.png', title: 'موسلی سیب و دارچین', text: ''},
-      {id:8,cat_id: 2, image: '/img/موسلی-نارگیل-و-شکلات-تلخ.png', title: 'موسلی‌نارگیل و شکلات‌تلخ', text: ''},
+      {id:11,cat_id: 3, image: '/img/پروتیین-بار-فندق.png', title: 'پروتئین‌بار سوفیت فندق', text: ''},
+      {id:12,cat_id: 3, image: '/img/پروتیین-بار-موزی.png', title: 'پروتئین‌بار سوفیت موزی', text: ''},
+      {id:4,cat_id: 1, image: '/img/گرانولابار-نارگیل.png', title: 'انرژی‌بار نارگیل', text: ''},
+      {id:5,cat_id: 1, image: '/img/گرانولابار-کرنبری.png', title: 'انرژی‌بار کرنبری', text: ''},
+      {id:8,cat_id: 2, image: '/img/موسلی-نارگیل-و-شکلات-تلخ.png', title: 'موسلی ‌نارگیل و شکلات ‌تلخ', text: ''},
       {id:9,cat_id: 2, image: '/img/موسلی-کرنبری.png', title: 'موسلی کرنبری', text: ''},
+      {id:13,cat_id: 3, image: '/img/پروتیین-بار-پرتغال.png', title: 'پروتئین‌بار سوفیت پرتغال', text: ''},
+      {id:14,cat_id: 3, image: '/img/پروتیین-بار-کارامل.png', title: 'پروتئین‌بار سوفیت کارامل', text: ''},
+
+      {id:3,cat_id: 1, image: '/img/گرانولابار-بادام-زمینی.png', title: 'انرژی‌بار بادام زمینی', text: ''},
       {id:10,cat_id: 2, image: '/img/موسلی-کره-بادام-زمینی.png', title: 'موسلی کره بادام زمینی', text: ''},
-      {id:11,cat_id: 3, image: '/img/پروتیین-بار-فندق.png', title: 'پروتئین بار فندق', text: ''},
-      {id:12,cat_id: 3, image: '/img/پروتیین-بار-موزی.png', title: 'پروتئین بار موزی', text: ''},
-      {id:13,cat_id: 3, image: '/img/پروتیین-بار-پرتغال.png', title: 'پروتئین بار پرتغال', text: ''},
-      {id:14,cat_id: 3, image: '/img/پروتیین-بار-کارامل.png', title: 'پروتئین بار کارامل', text: ''},
     ];
     const products = ref([]);
     const catFilter = ref(false);
     onMounted(() => {
       products.value = pros;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (localStorage.getItem('scroll')){
+        document.querySelector('#'+localStorage.getItem('scroll'))?.scrollIntoView();
+      }else{
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      localStorage.removeItem('scroll')
+
       // preload();
     });
     const filterProducts = (id) => {

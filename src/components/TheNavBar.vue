@@ -19,7 +19,8 @@
             <router-link id="homeSection" to="/" class="nav-link cursor" aria-current="page">خانه</router-link>
           </li>
           <li class="nav-item px-3 cursor">
-            <a id="categoriesSection" class="nav-link" @click="scrollTo('categories')">محصولات</a>
+            <a id="categoriesSection" v-if="$route.path=='/'" class="nav-link" @click="scrollTo('categories')">محصولات</a>
+            <router-link id="categoriesSection" v-else class="nav-link" to="/" @click="scrollTo('categories',true)">محصولات</router-link>
           </li>
 <!--          <li class="nav-item px-3">-->
 <!--            <a id="footerSection" class="nav-link" @click="scrollTo('footer')">درباره ما</a>-->
@@ -44,9 +45,12 @@ export default {
   name: "TheNavBar",
   components:{App},
   setup(){
-    const scrollTo = (id)=>{
+    const scrollTo = (id,flag)=>{
       if(window.innerWidth<992){
         document.querySelector('.navbar-toggler').click();
+      }
+      if (flag === true){
+        localStorage.setItem('scroll',id);
       }
       document.querySelector('#'+id)?.scrollIntoView();
     }
