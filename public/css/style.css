@@ -76,8 +76,8 @@ a {
 }
 
 .cat-box {
-    width: 140px;
-    height: 140px;
+    width: 200px;
+    height: 200px;
     border: 1px solid whitesmoke;
     border-radius: 50%;
     background-color: whitesmoke;
@@ -148,8 +148,8 @@ a {
 
 @media (max-width: 600px) {
     .cat-box {
-        width: 115px;
-        height: 115px;
+        width: 160px;
+        height: 160px;
     }
 
     .cat-title {
