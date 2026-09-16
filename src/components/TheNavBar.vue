@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid d-flex justify-content-between">
+    <div class="mx-auto d-flex justify-content-center">
       <div class="d-none d-lg-block">
         <router-link to="/" class="navbar-brand cursor"><img src="/img/logoW.png" width="100px" alt=""></router-link>
       </div>
@@ -13,7 +13,7 @@
       <div class="d-lg-none">
         <router-link to="/" class="navbar-brand cursor"><img src="/img/logoW.png" width="70px" alt=""></router-link>
       </div>
-      <div class="collapse navbar-collapse justify-content-center nvStyle" id="navbarNavDropdown" >
+      <div class="collapse navbar-collapse d-flex justify-content-center nvStyle" id="navbarNavDropdown" >
         <ul class="navbar-nav text-center">
           <li class="nav-item px-3">
             <router-link id="homeSection" to="/" class="nav-link cursor" aria-current="page">خانه</router-link>

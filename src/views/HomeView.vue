@@ -18,7 +18,7 @@
     </div>
 
     <div id="products" class=" w-100 p-0 m-0 mt-5 px-0 px-md-5 row">
-      <a :href="'/product/'+pro.id" v-for="(pro,index) in products" :key="pro.id" class="product-box-wrapper h-100" :class="{'col-6 col-lg-2':!catFilter&&!more,'col-12 col-lg-3':catFilter&&more, 'col-12 col-lg-4':catFilter&&!more}">
+      <a :href="'/product/'+pro.id" v-for="(pro,index) in products" :key="pro.id" class="product-box-wrapper h-100" :class="{'col-6 col-lg-2':!catFilter&&!more,'col-12 col-lg-2':catFilter&&more, 'col-12 col-lg-4':catFilter&&!more}">
         <div class="product-box">
           <lazy-image :data="pro" :index="pro.id" />
           <p class="product-title">{{ pro.title }}</p>
@@ -48,18 +48,11 @@ export default {
     TheNavBar,TheFooter,LazyImage
   },
   setup() {
-    const categories = [
-      {id: 1, image: '/img/انرژی‌بار بادام زمینی- ساشه.png', title: 'گرانولابار'},
-      {id: 2, image: '/img/فروت‌بار زردآلو- ساشه.png', title: 'فروت‌بار'},
-      {id: 3, image: '/img/پاوچ موسلی نارگیل و شکلات تلخ.png', title: 'موسلی ‌پاوچ'},
-      {id: 4, image: '/img/موسلی باکس پسته و گل محمدی.png', title: 'موسلی باکس'},
-      {id: 6, image: '/img/پروتئین‌بار سوفیت قهوه.png', title: 'پروتئین‌بارها'},
-      {id: 5, image: '/img/پروتئین‌بار زیرو سوفیت- براونی ساشه.png', title: 'زیرو پروتئین‌بارها'},
-      {id: 7, image: '/img/پروتئین‌بار لقمه سوفیت پرتقال.png', title: 'میکس لقمه'},
-    ];
+
     const pros0 = [
 
     ];
+    const categories = App.setup().categories;
     const pros = App.setup().pros;
     const products = ref([]);
     const catFilter = ref(0);
@@ -80,8 +73,9 @@ export default {
       more.value = false;
       catFilter.value = id;
       document.querySelectorAll('.cat-box').forEach((element)=>{
-        element.style.width='160px';
-        element.style.height='160px';
+        element.style.width='140px';
+        element.style.height='140px';
+        element.style.fontSize='12px';
       })
       document.querySelectorAll('.product-box').forEach((element)=>{
         element.classList.add('zoomOut');
@@ -126,7 +120,8 @@ export default {
     }
 
     return {
-      products, categories, pros0, pros, filterProducts, catFilter, preload,scroll,more,wantMore
+      products, categories, pros0, pros, filterProducts,
+      catFilter, preload,scroll,more,wantMore
     }
   }
 }

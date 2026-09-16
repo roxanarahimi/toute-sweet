@@ -84,6 +84,7 @@ a {
     padding: 10px;
     /*margin: 10px 30px;*/
     cursor: pointer;
+    margin-bottom: 35px;
 }
 
 .cat-box:hover {
@@ -148,8 +149,8 @@ a {
 
 @media (max-width: 600px) {
     .cat-box {
-        width: 160px;
-        height: 160px;
+        width: 140px;
+        height: 140px;
     }
 
     .cat-title {
@@ -186,7 +187,11 @@ a {
 
 @media (min-width: 992px) {
     .nvStyle {
-        width: calc(100% - 100px);
-        padding-left: 100px;
+        width: 300px !important;
+        /*width: calc(100% - 100px);*/
+        /*padding-left: 100px;*/
     }
+}
+p{
+    margin-bottom: 0 !important;
 }

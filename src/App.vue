@@ -7,6 +7,17 @@ import {ref} from "vue";
 
 export default {
   setup() {
+    const categories = [
+      {id: 5, image: '/img/پروتئین‌بار زیرو سوفیت- براونی ساشه.png', title: 'زیرو پروتئین‌بارها'},
+      {id: 2, image: '/img/فروت‌بار زردآلو- ساشه.png', title: 'فروت‌بار'},
+      {id: 3, image: '/img/پاوچ موسلی نارگیل و شکلات تلخ.png', title: 'موسلی ‌پاوچ'},
+      {id: 4, image: '/img/موسلی باکس پسته و گل محمدی.png', title: 'موسلی باکس'},
+      {id: 7, image: '/img/پروتئین‌بار لقمه سوفیت پرتقال.png', title: 'میکس لقمه پروتئین‌بار'},
+      {id: 8, image: '/img/انرژی‌بار لقمه دانه و کشمش- ساشه.png', title: 'میکس لقمه گرانولابار'},
+      {id: 6, image: '/img/پروتئین‌بار سوفیت قهوه.png', title: 'پروتئین‌بارها'},
+      {id: 1, image: '/img/انرژی‌بار بادام زمینی- ساشه.png', title: 'گرانولابار'},
+
+    ];
     const pros = [
 
       {id:1,cat_id: 1, image: '/img/انرژی‌بار بادام زمینی- ساشه.png', title: 'گرانولابار بادام زمینی',
@@ -61,10 +72,10 @@ export default {
         }
       },
 
-      {id:6,cat_id: 7, image: '/img/کیسه انرژی‌بار لقمه.png', title: 'گرانولابار لقمه بسته 15 عددی',
+      {id:6,cat_id: 8, image: '/img/کیسه انرژی‌بار لقمه.png', title: 'گرانولابار لقمه بسته 15 عددی',
 
       },
-      {id:7,cat_id: 7, image: '/img/انرژی‌بار لقمه بادام زمینی- ساشه.png', title: 'گرانولابار لقمه بادام زمینی',
+      {id:7,cat_id: 8, image: '/img/انرژی‌بار لقمه بادام زمینی- ساشه.png', title: 'گرانولابار لقمه بادام زمینی',
         subTitle: 'با روکش فرآورده کاکائویی تلخ',
         sugar: 'بدون شکر افزوده، فقط با عسل طبیعی',
         contains: 'بار فشرده جوپرک با کره بادام‌زمینی',
@@ -75,7 +86,7 @@ export default {
           carbohydrate: '4.53', sodium: '0.012', cholesterol: '3.93',transFattyAcids:'0.01',saturatedFattyAcids:'0.82', fat: '1.42'
         }
       },
-      {id:8,cat_id: 7, image: '/img/انرژی‌بار لقمه دانه و کشمش- ساشه.png', title: 'گرانولابار لقمه دانه و کشمش',
+      {id:8,cat_id: 8, image: '/img/انرژی‌بار لقمه دانه و کشمش- ساشه.png', title: 'گرانولابار لقمه دانه و کشمش',
         subTitle: 'با روکش فرآورده کاکائویی تلخ',
         sugar: 'بدون شکر افزوده، فقط با عسل طبیعی',
         contains: 'بار فشرده جوپرک با کشمش و مغزدانه‌های خوراکی',
@@ -86,7 +97,7 @@ export default {
           carbohydrate: '4.53', sodium: '0.012', cholesterol: '3.93',transFattyAcids:'0.01',saturatedFattyAcids:'0.82', fat: '1.42'
         }
       },
-      {id:9,cat_id: 7, image: '/img/انرژی‌بار لقمه دانه چیا- ساشه.png', title: 'گرانولابار لقمه دانه چیا',
+      {id:9,cat_id: 8, image: '/img/انرژی‌بار لقمه دانه چیا- ساشه.png', title: 'گرانولابار لقمه دانه چیا',
         subTitle: 'با روکش فرآورده کاکائویی تلخ',
         sugar: 'بدون شکر افزوده، فقط با عسل طبیعی',
         contains: 'بار فشرده جوپرک با دانه چیا',
@@ -97,7 +108,7 @@ export default {
           carbohydrate: '4.53', sodium: '0.012', cholesterol: '3.93',transFattyAcids:'0.01',saturatedFattyAcids:'0.82', fat: '1.42'
         }
       },
-      {id:10,cat_id: 7, image: '/img/انرژی‌بار لقمه نارگیل- ساشه.png', title: 'گرانولابار لقمه نارگیل',
+      {id:10,cat_id: 8, image: '/img/انرژی‌بار لقمه نارگیل- ساشه.png', title: 'گرانولابار لقمه نارگیل',
         subTitle: 'با روکش فرآورده کاکائویی تلخ',
         sugar: 'بدون شکر افزوده، فقط با عسل طبیعی',
         contains: 'بار فشرده جوپرک با نارگیل',
@@ -108,7 +119,7 @@ export default {
           carbohydrate: '4.53', sodium: '0.012', cholesterol: '3.93',transFattyAcids:'0.01',saturatedFattyAcids:'0.82', fat: '1.42'
         }
       },
-      {id:11,cat_id: 7, image: '/img/انرژی‌بار لقمه کرنبری- ساشه.png', title: 'گرانولابار لقمه کرنبری',
+      {id:11,cat_id: 8, image: '/img/انرژی‌بار لقمه کرنبری- ساشه.png', title: 'گرانولابار لقمه کرنبری',
         subTitle: 'با روکش فرآورده کاکائویی تلخ',
         sugar: 'بدون شکر افزوده، فقط با عسل طبیعی',
         contains: 'بار فشرده جوپرک با کرنبری',
@@ -295,7 +306,7 @@ export default {
       {id:43,cat_id: 7, image: '/img/کیسه پروتئین‌بار سوفیت لقمه.png', title: 'پروتئین‌بار لقمه سوفیت بسته 12 عددی' },
       {id:44,cat_id: 7, image: '/img/پروتئین‌بار لقمه سوفیت فندق.png', title: 'پروتئین‌بار لقمه سوفیت فندق' },
       {id:45,cat_id: 7, image: '/img/پروتئین‌بار لقمه سوفیت قهوه.png', title: 'پروتئین‌بار لقمه سوفیت قهوه' },
-      {id:46,cat_id: 7, image: '/img/پروتئین‌بار لقمه سوفیت موز.png', title: 'پروتئین‌بار لقمه سوفیت موز' },
+      {id:46,cat_id: 7, image: '/img/پروتئین‌بارلقمه  سوفیت موز.png', title: 'پروتئین‌بار لقمه سوفیت موز' },
       {id:47,cat_id: 7, image: '/img/پروتئین‌بار لقمه سوفیت پرتقال.png', title: 'پروتئین‌بار لقمه سوفیت پرتقال' },
       {id:48,cat_id: 7, image: '/img/پروتئین‌بار لقمه سوفیت کارامل.png', title: 'پروتئین‌بار لقمه سوفیت کارامل' },
 
@@ -386,7 +397,7 @@ export default {
 
     return {
 
-      pros
+      pros, categories
     }
   }
 

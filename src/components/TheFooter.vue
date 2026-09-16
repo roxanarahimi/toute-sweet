@@ -1,18 +1,20 @@
 <template>
-  <footer id="footer" class="main-bg text-light w-100 container-fluid">
+  <footer id="footer" class="main-bg text-light w-100 container-fluid pt-5">
     <div class="row px-2 px-xl-5 justify-content-xl-between h-100">
-      <div class="col-md-6 col-xl-5 mb-xl-0 h-100 text-center ">
-        <img src="/img/logoW.png" class="mb-4 mb-xl-0 mt-3" width="200px" alt="">
-        <p class="text-justify px-xl-3">
-
+      <div class="col-md-4 mb-xl-0 h-100 text-center d-grid ">
+        <p class="text-center mt-5 mt-xl-0 mb-4"><b>درباره ما</b></p>
+        <p class="text-justify px-xl-3 align-self-end">
           شرکت «تژ به‌دان سریرا» با برند تجاری TouteSweet از سال ۱۳۹۷ در زمینه تولید انواع موسلی، پروتئین‌بار و
           انرژی‌بار فعالیت خود را آغاز کرده است. هدف اصلی ما ارائه مواد غذایی سالم و مغذی است که مناسب برای تمام
           گروه‌های سنی بوده و تجربه‌ای لذت‌بخش از تغذیه سالم را به مشتریان ارائه دهد. در تژ به‌دان سریرا، ما به تغذیه
           سالم به‌عنوان یکی از ارکان اصلی زندگی توجه ویژه‌ای داریم و تمامی تلاش خود را در جهت ارتقای سلامت و بهبود کیفیت
           زندگی افراد متمرکز کرده‌ایم.</p>
       </div>
-      <div class="col-md-6 col-xl-4 px-xl-3 mb-5 mb-xl-3 d-grid ">
-        <div class="align-self-end">
+      <div class="col-md-3 text-center">
+        <img src="/img/logoW.png" class="mb-4 mb-xl-0 mt-3" width="200px" alt="">
+      </div>
+      <div class="col-md-3 px-xl-3 mb-5 mb-xl-3 d-grid h-100">
+        <div class="align-self-start">
           <p class="text-center mt-5 mt-xl-0 mb-4"><b>تماس با ما</b></p>
           <ul class="p-0">
             <li class="d-flex mb-3">
@@ -64,7 +66,7 @@
         </div>
 
       </div>
-      <div class="col-12 px-2 px-xl-3 mt-xl-3 mb-3 ">
+      <div class="col-12 px-2 px-xl-3 mt-xl-3 mb-3 text-center ">
         <small>
           &copy; کلیه حقوق این وبسایت متعلق به شرکت
           <span style=" white-space: nowrap;">تژ به‌دان سریرا</span>
