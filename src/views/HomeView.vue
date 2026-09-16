@@ -18,7 +18,7 @@
     </div>
 
     <div id="products" class=" w-100 p-0 m-0 mt-5 px-0 px-md-5 row">
-      <a :href="'/product/'+pro.id" v-for="(pro,index) in products" :key="pro.id" class="product-box-wrapper h-100" :class="{'col-6 col-lg-2':!catFilter&&!more,'col-12 col-lg-2':catFilter&&more, 'col-12 col-lg-4':catFilter&&!more}">
+      <a :href="'/product/'+pro.id" v-for="(pro,index) in products" :key="pro.id" class="product-box-wrapper h-100" :class="{'col-6 col-lg-2':!catFilter&&!more,'col-12 col-lg-2':catFilter&&more, 'col-12 col-lg-3':catFilter&&!more}">
         <div class="product-box">
           <lazy-image :data="pro" :index="pro.id" />
           <p class="product-title">{{ pro.title }}</p>
@@ -85,7 +85,7 @@ export default {
             products.value = [];
             products.value = pros.filter((element) => {
               return element.cat_id === id;
-            }).splice(0,3)
+            }).splice(0,4)
             document.querySelectorAll('.product-box').forEach((element)=>{
               element.classList.remove('zoomOut');
               element.classList.add('zoomIn');
