@@ -18,7 +18,7 @@
     </div>
 
     <div id="products" class=" w-100 p-0 m-0 mt-5 px-0 px-md-5 row">
-      <a :href="'/product/'+pro.id" v-for="(pro,index) in products" :key="pro.id" class="product-box-wrapper h-100" :class="{'col-6 col-lg-2':!catFilter&&!more,'col-12 col-lg-2':catFilter&&more, 'col-12 col-lg-3':catFilter&&!more}">
+      <a :href="'/product/'+pro.id" v-for="(pro,index) in products" :key="pro.id" class="product-box-wrapper h-100" :class="{'col-6 col-sm-6  col-md-3 col-lg-2':!catFilter&&!more,'col-12 col-sm-6  col-md-3 col-lg-2':catFilter&&more, 'col-12 col-sm-6  col-md-3 col-lg-3':catFilter&&!more}">
         <div class="product-box">
           <lazy-image :data="pro" :index="pro.id" />
           <p class="product-title">{{ pro.title }}</p>
