@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid d-flex justify-content-center">
+    <div class="container-fluid d-flex justify-content-between justify-content-lg-center">
       <div class="d-none d-lg-block">
         <router-link to="/" class="navbar-brand cursor"><img src="/img/logoW.png" width="100px" alt=""></router-link>
       </div>
