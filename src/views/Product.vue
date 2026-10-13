@@ -28,49 +28,59 @@
              <strong>جدول ارزش غذایی {{ product.title }} در {{ product.weight }} گرم</strong>
              <table class="table border mt-3">
                <tbody>
-               <tr>
-                 <th scope="col" class="ps-3">انرژی</th>
-                 <td dir="ltr" class="text-left pe-3">{{ product.nutritional_value?.energy }} Kcal</td>
-               </tr>
-               <tr>
-                 <th scope="col" class="ps-3">پروتئین</th>
-                 <td dir="ltr" class="text-left pe-3">{{ product.nutritional_value?.protein }} g</td>
-               </tr>
-               <tr>
-                 <th scope="col" class="ps-3">کربوهیدرات</th>
-                 <td dir="ltr" class="text-left pe-3">{{ product.nutritional_value?.carbohydrate}} g</td>
-               </tr>
-               <tr>
-                 <th scope="col" class="ps-3">چربی</th>
-                 <td dir="ltr" class="text-left pe-3">{{ product.nutritional_value?.fat}} g</td>
-               </tr>
-               <tr>
-                 <th scope="col" class="ps-3">فیبر</th>
-                 <td dir="ltr" class="text-left pe-3">{{ product.nutritional_value?.fiber}} g</td>
-               </tr>
+               <tr v-if="product.nutritional_value?.energy"><th scope="col" class="ps-3">انرژی</th><td dir="ltr" class="text-left pe-3">{{ product.nutritional_value?.energy }} Kcal</td></tr>
+               <tr v-if="product.nutritional_value?.protein"><th scope="col" class="ps-3">پروتئین</th><td dir="ltr" class="text-left pe-3">{{ product.nutritional_value?.protein }} g</td></tr>
+               <tr v-if="product.nutritional_value?.carbohydrate"><th scope="col" class="ps-3">کربوهیدرات</th><td dir="ltr" class="text-left pe-3">{{ product.nutritional_value?.carbohydrate}} g</td></tr>
+               <tr v-if="product.nutritional_value?.Calcium"><th scope="col" class="ps-3">کلسیم</th><td dir="ltr" class="text-left pe-3">{{ product.nutritional_value?.Calcium}} g</td></tr>
+               <tr v-if="product.nutritional_value?.sugar"><th scope="col" class="ps-3">قند</th><td dir="ltr" class="text-left pe-3">{{ product.nutritional_value?.sugar}} g</td></tr>
+               <tr v-if="product.nutritional_value?.addedSugar"><th scope="col" class="ps-3">قند افزوده</th><td dir="ltr" class="text-left pe-3">{{ product.nutritional_value?.addedSugar}} g</td></tr>
+               <tr v-if="product.nutritional_value?.salt"><th scope="col" class="ps-3">نمک</th><td dir="ltr" class="text-left pe-3">{{ product.nutritional_value?.salt}} g</td></tr>
+               <tr v-if="product.nutritional_value?.sodium"><th scope="col" class="ps-3">سدیم</th><td dir="ltr" class="text-left pe-3">{{ product.nutritional_value?.sodium}} g</td></tr>
+               <tr v-if="product.nutritional_value?.cholesterol"><th scope="col" class="ps-3">کلسترول</th><td dir="ltr" class="text-left pe-3">{{ product.nutritional_value?.cholesterol}} g</td></tr>
+               <tr v-if="product.nutritional_value?.transFattyAcids"><th scope="col" class="ps-3">اسیدهای چرب ترانس</th><td dir="ltr" class="text-left pe-3">{{ product.nutritional_value?.transFattyAcids}} g</td></tr>
+               <tr v-if="product.nutritional_value?.saturatedFattyAcids"><th scope="col" class="ps-3">اسید های چرب اشباع</th><td dir="ltr" class="text-left pe-3">{{ product.nutritional_value?.saturatedFattyAcids}} g</td></tr>
+               <tr v-if="product.nutritional_value?.fat"><th scope="col" class="ps-3">چربی</th><td dir="ltr" class="text-left pe-3">{{ product.nutritional_value?.fat}} g</td></tr>
+               <tr v-if="product.nutritional_value?.fiber"><th scope="col" class="ps-3">فیبر</th><td dir="ltr" class="text-left pe-3">{{ product.nutritional_value?.fiber}} g</td></tr>
                </tbody>
              </table>
            </div>
-           <div class="col-md-10 col-xl-7 d-none d-md-block text-center text-md-start">
+           <div class="col-md-10 col-xl-9 d-none d-md-block text-center text-md-start">
              <div class="w-100 mt-5 px-3 px-md-5 mb-5">
                <strong>جدول ارزش غذایی {{ product.title }} در {{ product.weight }} گرم</strong>
                <table class="table table-responsive border text-center mt-3 w-100">
                  <thead>
                  <tr>
-                   <th scope="col">انرژی</th>
-                   <th scope="col">پروتئین</th>
-                   <th scope="col">کربوهیدرات</th>
-                   <th scope="col">چربی</th>
-                   <th scope="col">فیبر</th>
-                 </tr>
+                   <th v-if="product.nutritional_value?.energy" scope="col">انرژی</th>
+                   <th v-if="product.nutritional_value?.protein" scope="col">پروتئین</th>
+                   <th v-if="product.nutritional_value?.carbohydrate" scope="col">کربوهیدرات</th>
+                   <th v-if="product.nutritional_value?.Calcium" scope="col">کلسیم</th>
+                   <th v-if="product.nutritional_value?.sugar" scope="col">قند</th>
+                   <th v-if="product.nutritional_value?.addedSugar" scope="col">قند افزوده</th>
+                   <th v-if="product.nutritional_value?.salt" scope="col">نمک</th>
+                   <th v-if="product.nutritional_value?.sodium" scope="col">سدیم</th>
+                   <th v-if="product.nutritional_value?.cholesterol" scope="col">کلسترول</th>
+                   <th v-if="product.nutritional_value?.transFattyAcids" scope="col">اسیدهای چرب ترانس</th>
+                   <th v-if="product.nutritional_value?.saturatedFattyAcids" scope="col">اسید های چرب اشباع</th>
+                   <th v-if="product.nutritional_value?.fat" scope="col">چربی</th>
+                   <th v-if="product.nutritional_value?.fiber" scope="col">فیبر</th>
+                     </tr>
                  </thead>
                  <tbody>
                  <tr>
-                   <td dir="ltr">{{ product.nutritional_value?.energy }} Kcal</td>
-                   <td dir="ltr">{{ product.nutritional_value?.protein }} g</td>
-                   <td dir="ltr">{{ product.nutritional_value?.carbohydrate}} g</td>
-                   <td dir="ltr">{{ product.nutritional_value?.fat}} g</td>
-                   <td dir="ltr">{{ product.nutritional_value?.fiber}} g</td>
+                   <td v-if="product.nutritional_value?.energy" dir="ltr">{{ product.nutritional_value?.energy }} Kcal</td>
+                   <td v-if="product.nutritional_value?.protein" dir="ltr">{{ product.nutritional_value?.protein }} g</td>
+                   <td v-if="product.nutritional_value?.carbohydrate" dir="ltr">{{ product.nutritional_value?.carbohydrate}} g</td>
+                   <td v-if="product.nutritional_value?.Calcium" dir="ltr">{{ product.nutritional_value?.Calcium }} Kcal</td>
+                   <td v-if="product.nutritional_value?.sugar" dir="ltr">{{ product.nutritional_value?.sugar }} g</td>
+                   <td v-if="product.nutritional_value?.addedSugar" dir="ltr">{{ product.nutritional_value?.addedSugar }} g</td>
+                   <td v-if="product.nutritional_value?.salt" dir="ltr">{{ product.nutritional_value?.salt }} g</td>
+                   <td v-if="product.nutritional_value?.sodium" dir="ltr">{{ product.nutritional_value?.sodium}} g</td>
+                   <td v-if="product.nutritional_value?.cholesterol" dir="ltr">{{ product.nutritional_value?.cholesterol}} g</td>
+                   <td v-if="product.nutritional_value?.transFattyAcids" dir="ltr">{{ product.nutritional_value?.transFattyAcids}} g</td>
+                   <td v-if="product.nutritional_value?.saturatedFattyAcids" dir="ltr">{{ product.nutritional_value?.saturatedFattyAcids}} g</td>
+                   <td v-if="product.nutritional_value?.fat" dir="ltr">{{ product.nutritional_value?.fat}} g</td>
+                   <td v-if="product.nutritional_value?.fiber" dir="ltr">{{ product.nutritional_value?.fiber}} g</td>
+
                  </tr>
                  </tbody>
                </table>
